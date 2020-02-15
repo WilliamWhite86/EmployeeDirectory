@@ -14,29 +14,31 @@ export default class EmployeeSearch extends React.Component {
     };
 
 
-  // When this component mounts, search the Giphy API for pictures of kittens
+  // When this component mounts, search the API
   componentDidMount() {
-    this.searchEmployee("John");
+    this.searchEmployees('');
   }
 
-  searchEmployee = query => {
+  searchEmployees = query => {
     API.search(query)
-      .then(res => this.setState({ results: res.data.data }))
+      .then(res => this.setState({ results: res.data.results[0].name.first },
+        console.log(res.data.results)))
       .catch(err => console.log(err));
   };
 
   handleInputChange = event => {
     const name = event.target.name;
+    console.log(name)
     const value = event.target.value;
     this.setState({
       [name]: value
     });
   };
 
-  // When the form is submitted, search the Giphy API for `this.state.search`
+  // When the form is submitted, search the API for `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
-    this.searchEmployee(this.state.search);
+    this.searchEmployees(this.state.search);
   };
 
     render(){
@@ -47,7 +49,7 @@ export default class EmployeeSearch extends React.Component {
                 <TableArea>
                 </TableArea>                    
                 <TableHeader></TableHeader>
-                <TableData></TableData>
+                <TableData results = {this.state.results}/>
             </div>
         )
     }
