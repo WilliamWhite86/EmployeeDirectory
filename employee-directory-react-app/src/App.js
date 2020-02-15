@@ -1,18 +1,10 @@
 import React from 'react';
-import PageHeader from './components/PageHeader';
-import SearchBar from './components/SearchBar';
-import TableArea from './components/TableArea';
-import TableHeader from './components/TableHeader';
-import TableData from './components/TableData';
+import EmployeeSearch from './components/EmployeeSearch'
 
 function App() {
   return (
     <div>
-    <PageHeader />
-    <SearchBar />
-    <TableArea />
-    <TableHeader />
-    <TableData />
+<EmployeeSearch></EmployeeSearch>
    </div>
   );
 }

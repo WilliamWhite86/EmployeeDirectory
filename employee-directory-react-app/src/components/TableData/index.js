@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
 
-export default class TableData extends React.Component {
+function TableData (props) {
+  return (
+    <ul className="list-group">
 
-    render(){
-        return(
-            <div>
-                TableData
-            </div>
-        )
-    }
+    </ul>
+  );
 }
+
+export default TableData;
