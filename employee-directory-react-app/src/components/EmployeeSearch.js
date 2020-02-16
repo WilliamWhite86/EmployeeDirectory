@@ -5,6 +5,7 @@ import TableArea from './TableArea';
 import TableHeader from './TableHeader';
 import TableData from './TableData';
 import API from "../utils/API";
+import 'bootstrap/dist/css/bootstrap.css';
 
 export default class EmployeeSearch extends React.Component {
 
@@ -22,24 +23,31 @@ export default class EmployeeSearch extends React.Component {
   searchEmployees = query => {
     API.search(query)
       .then(res => this.setState({ results: res.data.results},
-        // [0].name.first },
         console.log(res.data.results)))
       .catch(err => console.log(err));
   };
 
-  handleInputChange = event => {
-    const name = event.target.name;
-    console.log(name)
-    const value = event.target.value;
-    this.setState({
-      [name]: value
-    });
-  };
+//   handleInputChange = event => {
+//     event.preventDefault();
+//       //gender
+//     console.log(event.target)
+//     const name = event.target.name;
+//     console.log(name)
+//     const value = event.target.value;
+//     this.setState({
+//         //name = html element value = male/female, role, etc.
+//       [name]: value
+//     });
+//   };
 
-  // When the form is submitted, search the API for `this.state.search`
-  handleFormSubmit = event => {
-    event.preventDefault();
-    this.searchEmployees(this.state.search);
+  filterEmployees = event => {
+      console.log('button clicked')
+  }
+
+  handleClick = event => {
+    event.preventDefault(); 
+    console.log('handle radio click')
+    this.filterEmployees(this);
   };
 
     render(){
