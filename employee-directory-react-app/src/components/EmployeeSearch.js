@@ -21,7 +21,8 @@ export default class EmployeeSearch extends React.Component {
 
   searchEmployees = query => {
     API.search(query)
-      .then(res => this.setState({ results: res.data.results[0].name.first },
+      .then(res => this.setState({ results: res.data.results},
+        // [0].name.first },
         console.log(res.data.results)))
       .catch(err => console.log(err));
   };

@@ -6,7 +6,17 @@ export default class TableData extends React.Component {
     render() {
         return (
             <div>
-                {this.props.results}
+                <table>
+                    <tbody>
+                        
+                    {/* {this.props.results} */}
+                    {this.props.results.map((result) => (
+                        // console.log(result.name.first)),
+                        <tr key={result.login.username}><td >{result.name.first}</td></tr>)
+                    )}</tbody></table>
+
+
+
             </div>
         );
     }
