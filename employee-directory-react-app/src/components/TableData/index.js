@@ -9,7 +9,7 @@ export default class TableData extends React.Component {
             <div>
                 <table className="table table-striped">
                     <tbody>
-                        {this.props.results.map((result) => (
+                        {this.props.employeeList.map((result) => (
                             <tr key={result.login.username}>
                                 <td>{result.name.first} {result.name.last}</td>
                                 <td>{result.email}</td>

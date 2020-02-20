@@ -1,9 +1,6 @@
 import React from 'react';
 
-function SearchBar(value) {
-//  function handleClick(){
-//    console.log(value);
-//  }
+function SearchBar(props) {
 
 function getClickedInput(input) {
   alert(`${input}`);
