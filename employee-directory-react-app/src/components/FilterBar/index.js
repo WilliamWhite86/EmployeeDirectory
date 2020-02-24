@@ -2,7 +2,7 @@ import React from 'react';
 
 export default class FilterBar extends React.Component {
   render() {
-    const employeeMaleSorted = this.props.employees.filter(employee => employee.gender != 'female')
+    const employeeMaleSorted = this.props.employees.filter(employee => employee.gender !== 'female')
       return (
           <div>
               <table className="table table-striped">
