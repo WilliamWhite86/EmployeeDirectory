@@ -4,7 +4,7 @@ export default class TableHeader extends React.Component {
 
     render(){
         return(
-            <div>
+            <div onClick={() => this.employeeSort()}>
                 TableHeader
             </div>
         )
